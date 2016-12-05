@@ -1,0 +1,50 @@
+{
+  "name": "NAMEOFBOT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./node_modules/babel-cli/bin/babel-node.js src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/",
+    "build": "babel src -d lib"
+  },
+  "author": "Bruno Gantelmi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@git.recast.ai:bots/edf.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^4.17.2",
+    "recastai": "^2.2.1",
+    "superagent": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.11.5",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb-base": "^2.0.0",
+    "eslint-plugin-import": "^1.6.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "semi": [
+        2,
+        "never"
+      ]
+    }
+  }
+}
