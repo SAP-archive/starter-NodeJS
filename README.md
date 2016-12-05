@@ -20,3 +20,5 @@ npm install
 ```bash
 npm start
 ```
+
+### Et si besoin est, il y a un script pour check si vos intents match bien comme il faut.
