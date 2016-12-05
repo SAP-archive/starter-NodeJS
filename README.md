@@ -1,10 +1,22 @@
+### Commencer par git clone le répertoire:
+
+```bash
 git clone git@git.recast.ai:bots/starter.git
+```
 
+### Installer les node modules: 
+
+```bash
 npm install
+```
+### Modifier ces fichiers pour y mettre vos informations:
 
-changer dans package.json le name, l'url, et l'author.
-modifier dans config tout les éléments qui sont important.
+- package.json: name / url / author.
+- config/index.js: port / tout les tokens utilisés.
+- config/deploy.rb: repo_url.
 
-dans deploy.rb, modifié le repo_url.
+### Il ne vous reste plus qu'a lancer le server.
 
-npm start pour lancer le server.
+```bash
+npm start
+```
