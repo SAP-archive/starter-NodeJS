@@ -3,15 +3,15 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import Bot from 'recastai-botconnector'
 
-import { mongo, connector } from '../config/index'
+import { port, mongo, connector } from '../config/index'
 
 // BotConnector setup
-const bot = new Bot(botConnectorConfig)
+const bot = new Bot(connector)
 
 
 // Server setup
 const app = express()
-app.set('port', config.port || 5000)
+app.set('port', port || 5000)
 app.use(bodyParser.json())
 app.use('/', (req, res) => bot.listen(req, res))
 
