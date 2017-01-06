@@ -19,8 +19,7 @@
     "express": "^4.14.0",
     "lodash": "^4.17.2",
     "recastai": "^2.2.1",
-    "recastai-botconnector": "^1.0.1",
-    "superagent": "^2.3.0"
+    "recastai-botconnector": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
