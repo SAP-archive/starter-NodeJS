@@ -1,15 +1,14 @@
 {
   "name": "NAMEOFBOT",
   "version": "1.0.0",
-  "description": "",
+  "description": "A bot built with Recast.AI",
   "main": "server.js",
   "scripts": {
     "start": "node ./node_modules/babel-cli/bin/babel-node.js src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/",
     "build": "babel src -d lib"
   },
-  "author": "Bruno Gantelmi",
+  "author": "Recast",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -20,6 +19,7 @@
     "express": "^4.14.0",
     "lodash": "^4.17.2",
     "recastai": "^2.2.1",
+    "recastai-botconnector": "^1.0.1",
     "superagent": "^2.3.0"
   },
   "devDependencies": {
