@@ -3,13 +3,10 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import Bot from 'recastai-botconnector'
 
-import {
-  BotConnectorConfig,
-} from '../config/index'
-
+import { mongo, connector } from '../config/index'
 
 // BotConnector setup
-const bot = new Bot(BotConnectorConfig)
+const bot = new Bot(botConnectorConfig)
 
 
 // Server setup
@@ -27,9 +24,9 @@ bot.onTextMessage(message => {
 
 // MongoDB connection
 let db = 'mongodb://'
-if (config.database.username) { db = `${db}${config.database.username}:${config.database.password}@` }
-db = `${db}${config.database.hostname}:${config.database.port}/${config.database.name}`
-if (config.database.ssl) { db = `${db}?ssl=${config.database.ssl}` }
+if (mongo.username) { db = `${db}${mongo.username}:${mongo.password}@` }
+db = `${db}${mongo.hostname}:${mongo.port}/${mongo.name}`
+if (mongo.ssl) { db = `${db}?ssl=${mongo.ssl}` }
 mongoose.connect(db, err => {
   if (err) {
     console.error('An error occured while connecting to MongoDB')
