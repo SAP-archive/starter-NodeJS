@@ -18,6 +18,7 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.17.2",
+    "mongoose": "^4.7.6",
     "recastai": "^2.2.1",
     "recastai-botconnector": "^1.0.1"
   },
