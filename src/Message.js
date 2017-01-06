@@ -9,7 +9,8 @@ export default class Message {
   static async handleMessage (message) {
     try {
       const text = message.content.attachment.content
-      const res = await recastClient.textConverse(text)
+      const { senderId } = message
+      const res = await recastClient.textConverse(text, { conversationId: senderId })
 
       res.replies.forEach(content => message.addReply({ type: 'text', content }))
 
