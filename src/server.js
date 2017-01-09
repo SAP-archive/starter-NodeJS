@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import Bot from 'recastai-botconnector'
 
 import { port, mongo, connector } from '../config/index'
-import Message from './Message'
+import { handleMessage } from './messages'
 
 // BotConnector setup
 const bot = new Bot(connector)
@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 app.use('/', (req, res) => bot.listen(req, res))
 
 // When the bot receive a message...
-bot.onTextMessage(Message.handleMessage)
+bot.onTextMessage(handleMessage)
 
 // MongoDB connection
 let db = 'mongodb://'
