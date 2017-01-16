@@ -24,6 +24,9 @@ if (mongo.username) { db = `${db}${mongo.username}:${mongo.password}@` }
 db = `${db}${mongo.hostname}:${mongo.port}/${mongo.name}`
 if (mongo.ssl) { db = `${db}?ssl=${mongo.ssl}` }
 
+// remove deprecation warning from mongoose
+mongoose.Promise = global.Promise
+
 mongoose.connect(db, err => {
   if (err) {
     console.error('An error occured while connecting to MongoDB')

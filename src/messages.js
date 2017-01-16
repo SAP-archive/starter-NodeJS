@@ -7,7 +7,7 @@ export async function handleMessage (message) {
   try {
     const text = message.content.attachment.content
     const { senderId } = message
-    const res = await recastClient.textConverse(text, { conversationId: senderId })
+    const res = await recastClient.textConverse(text, { conversationToken: senderId })
 
     res.replies.forEach(content => message.addReply({ type: 'text', content }))
 
