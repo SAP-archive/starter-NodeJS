@@ -1,14 +1,18 @@
+// import for async await compatibilty when build and serve lib with node
+// it's already contained in babel-cli -> babel-register && babel-polyfill
+import 'babel-polyfill'
+
 import mongoose from 'mongoose'
-import Bot from 'recastai-botconnector'
+import botconnector from 'recastai-botconnector'
 
 import { mongo, connector } from './config'
 import { handleMessage } from './messages'
 
 // BotConnector setup
-const bot = new Bot(connector)
+const myBot = new botconnector(connector)
 
 // When the bot receive a message...
-bot.onTextMessage(handleMessage)
+myBot.onTextMessage(handleMessage)
 
 // MongoDB connection
 let db = 'mongodb://'
@@ -30,5 +34,5 @@ export function bot(event) {
   const req = {}
   req.body = event
   console.log(req)
-  bot.listen(req)
+  myBot.listen(req)
 }
