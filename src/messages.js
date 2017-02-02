@@ -1,5 +1,5 @@
 import { Client } from 'recastai'
-import { recast } from '../config'
+import { recast } from './config'
 
 const recastClient = new Client(recast.token, recast.language)
 
