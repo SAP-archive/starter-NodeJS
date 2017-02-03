@@ -1,5 +1,7 @@
+import mongoose from 'mongoose'
+
 import { Client } from 'recastai'
-import { recast } from '../config'
+import { recast } from './config'
 
 const recastClient = new Client(recast.token, recast.language)
 
@@ -16,4 +18,6 @@ export async function handleMessage (message) {
     console.error('An error occured while handling message', err)
   }
 
+  // We close the Mongo connection
+  mongoose.connection.close()
 }

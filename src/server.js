@@ -1,40 +1,18 @@
 import express from 'express'
-import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
-import Bot from 'recastai-botconnector'
 
-import { port, mongo, connector } from '../config/index'
-import { handleMessage } from './messages'
-
-// BotConnector setup
-const bot = new Bot(connector)
+import { bot } from './bot'
+import { port } from './config'
 
 // Server setup
 const app = express()
 app.set('port', port || 5000)
 app.use(bodyParser.json())
-app.use('/', (req, res) => bot.listen(req, res))
-
-// When the bot receive a message...
-bot.onTextMessage(handleMessage)
-
-// MongoDB connection
-let db = 'mongodb://'
-if (mongo.username) { db = `${db}${mongo.username}:${mongo.password}@` }
-db = `${db}${mongo.hostname}:${mongo.port}/${mongo.name}`
-if (mongo.ssl) { db = `${db}?ssl=${mongo.ssl}` }
-
-// remove deprecation warning from mongoose
-mongoose.Promise = global.Promise
-
-mongoose.connect(db, err => {
-  if (err) {
-    console.error('An error occured while connecting to MongoDB')
-    throw err
-  }
-
-  app.listen(app.get('port'), () => {
-    console.log('Our bot is running on port', app.get('port'))
-  })
+app.use('/', (req, res) => {
+  // Send back a 200 to BotConnector
+  res.status(200).send()
+  bot(req.body)
 })
-
+app.listen(app.get('port'), () => {
+  console.log('Our bot is running on port', app.get('port'))
+})

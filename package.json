@@ -4,8 +4,8 @@
   "description": "A bot built with Recast.AI",
   "main": "server.js",
   "scripts": {
-    "start": "node ./node_modules/babel-cli/bin/babel-node.js src/server.js",
-    "start-dev": "NODE_ENV=development nodemon src/server.js --exec babel-node",
+    "start": "nodemon --exec babel-node -- src/server.js",
+    "prod": "node lib/server.js",
     "lint": "eslint src/",
     "build": "babel src -d lib"
   },
@@ -16,6 +16,7 @@
     "url": "git@git.recast.ai:bots/edf.git"
   },
   "dependencies": {
+    "babel-polyfill": "^6.22.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.17.2",
