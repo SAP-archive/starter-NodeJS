@@ -1,38 +1,43 @@
-// import for async await compatibilty when build and serve lib with node
-// it's already contained in babel-cli -> babel-register && babel-polyfill
-import 'babel-polyfill'
+/*
+ * bot.js
+ * In this file, received message will be transformed with Recast.AI SDK
+ *
+ * The Recast.AI SDK will handle message and call your reply bot function
+ */
 
-import mongoose from 'mongoose'
-import BotConnector from 'recastai-botconnector'
+/*
+ * Import dependencies
+ */
+const RecastAI = require('recastai')
 
-import { mongo, connector } from './config'
-import { handleMessage } from './messages'
+/*
+ * Import configs
+ */
+const config = require('./config')
+const recast = config.recast
 
-// BotConnector setup
-const myBot = new BotConnector(connector)
+/*
+ * Import your reply bot function
+ */
+const message = require('./messages')
 
-// When the bot receive a message...
-myBot.onTextMessage(handleMessage)
+/*
+ * Instantiate Recast.AI SDK, just for connect service
+ */
+const connect = new RecastAI.connect(recast.token)
 
-// MongoDB connection
-let db = 'mongodb://'
-if (mongo.username) { db = `${db}${mongo.username}:${mongo.password}@` }
-db = `${db}${mongo.hostname}:${mongo.port}/${mongo.name}`
-if (mongo.ssl) { db = `${db}?ssl=${mongo.ssl}` }
-
-// remove deprecation warning from mongoose
-mongoose.Promise = global.Promise
-
-export function bot(event) {
-  const req = {}
-  req.body = event
-
-  mongoose.connect(db, err => {
-    if (err) {
-      console.error('An error occured while connecting to MongoDB')
-      throw err
-    } else {
-      myBot.listen(req, db)
-    }
-  })
+/*
+ * Main bot function
+ */
+const bot = (request, response) => {
+  /*
+   * Call the Recast.AI SDK function to handle message
+   * This function will:
+   * - Return a response with the status code 200
+   * - Create a Message object, easy usable in your code
+   * - Call the 'replyMessage' function, with this Message object in parameter
+   */
+  connect.connect.handleMessage(request, response, message.replyMessage)
 }
+
+module.exports = bot

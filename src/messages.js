@@ -1,23 +1,72 @@
-import mongoose from 'mongoose'
+/*
+ * message.js
+ * This file contains your bot code
+ */
 
-import { Client } from 'recastai'
-import { recast } from './config'
+/*
+ * Import dependencies
+ */
+const RecastAI = require('recastai')
 
-const recastClient = new Client(recast.token, recast.language)
+/*
+ * Import config
+ */
+const config = require('./config')
+const recast = config.recast
 
-export async function handleMessage (message) {
+/*
+ * This function is the core of the bot behaviour
+ */
+const replyMessage = (message) => {
   try {
+    /*
+     * Instantiate Recast.AI SDK, just for request service
+     */
+    const request = new RecastAI.request(recast.token, recast.language)
+
+    /*
+     * Get text from message received
+     */
     const text = message.content.attachment.content
+
+    /*
+     * Get senderId to catch unique conversation_token
+     */
     const { senderId } = message
-    const res = await recastClient.textConverse(text, { conversationToken: senderId })
 
-    res.replies.forEach(content => message.addReply({ type: 'text', content }))
+    /*
+     * Call Recast.AI SDK, through /converse route
+     */
+    request.converse.textConverse(text, { conversationToken: senderId })
+    .then(result => {
+      /*
+      * Here, you can add your own process.
+      * Ex: You can call any external API
+      * Or: Update your mongo DB
+      * etc...
+      */
 
-    await message.reply()
+      /*
+      * Add each replies received from API to replies stack
+      */
+      result.replies.forEach(content => message.addReply({ type: 'text', content }))
+
+      /*
+      * Send all replies
+      */
+      message.reply()
+      .then(() => {
+        /*
+         * Do some code after sending messages
+         */
+      })
+    })
   } catch (err) {
+    /*
+     * If there is any error...
+     */
     console.error('An error occured while handling message', err)
   }
-
-  // We close the Mongo connection
-  mongoose.connection.close()
 }
+
+module.exports = replyMessage

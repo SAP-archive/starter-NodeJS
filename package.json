@@ -1,5 +1,5 @@
 {
-  "name": "NAMEOFBOT",
+  "name": "Recast-ai-starter-kit",
   "version": "1.0.0",
   "description": "A bot built with Recast.AI",
   "main": "server.js",
@@ -13,25 +13,24 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@git.recast.ai:bots/edf.git"
+    "url": "git@git.recast.ai:starter-kits/nodejs.git"
   },
   "dependencies": {
     "babel-polyfill": "^6.22.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.17.2",
-    "mongoose": "^4.7.6",
     "recastai": "^2.2.1",
     "recastai-botconnector": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-eslint": "^6.1.2",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.11.5",
-    "eslint": "^2.9.0",
-    "eslint-config-airbnb-base": "^2.0.0",
+    "eslint": "^3.2.0",
+    "eslint-config-zavatta": "^4.2.0",
     "eslint-plugin-import": "^1.6.1",
     "nodemon": "^1.11.0"
   },
@@ -42,12 +41,9 @@
     ]
   },
   "eslintConfig": {
-    "extends": "airbnb-base",
+    "extends": "zavatta",
     "rules": {
-      "semi": [
-        2,
-        "never"
-      ]
+      "no-console": 0
     }
   }
 }
