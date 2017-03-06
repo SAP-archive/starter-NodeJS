@@ -15,7 +15,7 @@ const bodyParser = require('body-parser')
 /*
  * Import config
  */
-const config = require('./config')
+const { port } = require('./config')
 
 /*
  * Import main bot function
@@ -30,7 +30,7 @@ const app = express()
 /*
  * Set Express server port variable
  */
-app.set('port', config.port || 5000)
+app.set('port', port || 5000)
 
 /*
  * Use body-parser to parse request body

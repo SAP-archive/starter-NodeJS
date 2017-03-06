@@ -13,8 +13,7 @@ const RecastAI = require('recastai')
 /*
  * Import configs
  */
-const config = require('./config')
-const recast = config.recast
+const { recast } = require('./config')
 
 /*
  * Import your reply bot function

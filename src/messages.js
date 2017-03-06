@@ -11,8 +11,7 @@ const RecastAI = require('recastai')
 /*
  * Import config
  */
-const config = require('./config')
-const recast = config.recast
+const { recast } = require('./config')
 
 /*
  * This function is the core of the bot behaviour
