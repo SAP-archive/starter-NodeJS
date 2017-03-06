@@ -20,7 +20,7 @@ const { port } = require('./config')
 /*
  * Import main bot function
  */
-const bot = require('./bot')
+const { bot } = require('./bot')
 
 /*
  * Start Express server
@@ -44,7 +44,7 @@ app.use('/', (request, response) => {
   /*
    * Call bot main function
    */
-  bot.bot(request, response)
+  bot(request, response)
 })
 
 /*
