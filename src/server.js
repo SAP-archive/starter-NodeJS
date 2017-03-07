@@ -44,7 +44,7 @@ app.use('/', (request, response) => {
   /*
    * Call bot main function
    */
-  bot(request, response)
+  bot(request.body, response)
 })
 
 /*
