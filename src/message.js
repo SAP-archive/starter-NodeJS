@@ -28,7 +28,7 @@ const replyMessage = (message) => {
   /*
    * Call Recast.AI SDK, through /converse route
    */
-  request.converse.textConverse(text, { conversationToken: senderId })
+  request.converseText(text, { conversationToken: senderId })
   .then(result => {
     /*
     * Here, you can add your own process.

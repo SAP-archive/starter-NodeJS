@@ -28,7 +28,7 @@ const bot = (body, response) => {
    * - Create a Message object, easy usable in your code
    * - Call the 'replyMessage' function, with this Message object in parameter
    */
-  connect.connect.handleMessage({ body }, response, replyMessage)
+  connect.handleMessage({ body }, response, replyMessage)
 }
 
 module.exports = bot
