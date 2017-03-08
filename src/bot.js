@@ -5,25 +5,15 @@
  * The Recast.AI SDK will handle message and call your reply bot function
  */
 
-/*
- * Import dependencies
- */
-const RecastAI = require('recastai')
+const recastai = require('recastai')
+const config = require('./config')
 
-/*
- * Import configs
- */
-const { recast } = require('./config')
-
-/*
- * Import your reply bot function
- */
 const replyMessage = require('./message')
 
 /*
  * Instantiate Recast.AI SDK, just for connect service
  */
-const connect = new RecastAI.connect(recast.token)
+const connect = new recastai.connect(config.recast.token)
 
 /*
  * Main bot function

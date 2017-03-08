@@ -6,35 +6,17 @@
  * So, your bot can be triggered thought "/" route
  */
 
- /*
-  * Import dependencies
-  */
 const express = require('express')
 const bodyParser = require('body-parser')
 
-/*
- * Import config
- */
-const { port } = require('./config')
-
-/*
- * Import main bot function
- */
+const config = require('./config')
 const bot = require('./bot')
 
 /*
  * Start Express server
  */
 const app = express()
-
-/*
- * Set Express server port variable
- */
-app.set('port', port || 5000)
-
-/*
- * Use body-parser to parse request body
- */
+app.set('port', config.port || 5000)
 app.use(bodyParser.json())
 
 /*
