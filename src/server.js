@@ -20,7 +20,7 @@ const { port } = require('./config')
 /*
  * Import main bot function
  */
-const { bot } = require('./bot')
+const bot = require('./bot')
 
 /*
  * Start Express server

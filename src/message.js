@@ -26,7 +26,7 @@ const replyMessage = (message) => {
     /*
      * Get text from message received
      */
-    const text = message.content.attachment.content
+    const text = message.content
 
     /*
      * Get senderId to catch unique conversation_token
@@ -59,6 +59,12 @@ const replyMessage = (message) => {
          * Do some code after sending messages
          */
       })
+      .catch(err => {
+        console.error('Error while sending message to channel', err)
+      })
+    })
+    .catch(err => {
+      console.error('Error while sending message to Recast.AI', err)
     })
   } catch (err) {
     /*

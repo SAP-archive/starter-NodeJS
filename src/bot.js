@@ -18,7 +18,7 @@ const { recast } = require('./config')
 /*
  * Import your reply bot function
  */
-const { replyMessage } = require('./messages')
+const replyMessage = require('./message')
 
 /*
  * Instantiate Recast.AI SDK, just for connect service
