@@ -4,7 +4,9 @@
 
 `node v4.0.0`
 
-## Installation
+## Usage
+
+#### Installation
 
 `git clone && cd recast-ai-bot`
 
@@ -15,16 +17,30 @@ using npm
 or yarn
 `yarn`
 
-## Run
+#### create the config file
+
+ create a `config.js` file at the root of your project
+
+ and paste and complete these lines
+
+ ```
+ module.exports = {
+  port: process.env.PORT || '5000',
+  recast: {
+    token: process.env.RECAST_TOKEN || '',
+    language: process.env.RECAST_LANGUAGE || '',
+  },
+}
+```
+
+#### Run
 
 using npm `npm start`
 
 using yarn `yarn start`
 
-## Usage
-
-#### complete the config file
+#### Best practices
 
 
 
-
+## How your code will be deployed?
