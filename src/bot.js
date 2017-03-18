@@ -20,7 +20,7 @@ const connect = new recastai.connect(config.recast.token)
  */
 const bot = (body, response) => {
   /*
-   * Call the Recast.AI SDK function to handle message from BotConnector
+   * Call the Recast.AI SDK function to handle message from Bot Connector
    * This function will:
    * - Return a response with the status code 200
    * - Create a Message object, easy usable in your code
