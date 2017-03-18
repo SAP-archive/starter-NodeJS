@@ -14,6 +14,7 @@ const replyMessage = (message) => {
 
   // Get text from message received
   const text = message.content
+  console.log('I receive: ', text)
 
   // Get senderId to catch unique conversation_token
   const senderId = message.senderId
@@ -27,6 +28,9 @@ const replyMessage = (message) => {
     * Or: Update your mongo DB
     * etc...
     */
+    if (result.action) {
+      console.log('The conversation action is: ', result.action.slug)
+    }
 
     // Add each replies received from API to replies stack
     result.replies.forEach(replyContent => message.addReply({ type: 'text', content: replyContent }))
