@@ -83,18 +83,19 @@ Connect your github account on Recast:
 - Click on the **RUN** tab, and on the **Bot Hosting** menu
 - Connect your Github account
 - Select the repository you've just created
-- Wait a little, we're starting your instance in Amazon...
+- Wait a little, we're starting your instance...
 
 Every time you will push on master, we'll deploy your code :clap:
 
 #### Requirements
 
-Since we deploy your code in AWS Lambda, your package.json **must** contain:
+Since we deploy your code your code in generic containers, there are 3 requirements:
 
-- [x] The task `build`. The default one you will find in the starter kit is `"build": "babel src -d lib"` to compile your Javascript in a version that AWS Lambda support. So you can code with your favorite ES6, ES7 features :thumbsup:
-- [x] The task `prod`. the default one you will find in the starter kit is `"prod": "node lib/server.js"` to serve your code.
+- [x] Your package.json **must** contain the `build` task. It must be present even if empty or just copying files. The default one you will find in the starter kit is `"build": "babel src -d lib"` to compile your Javascript. So you can code with your favorite ES6, ES7 features :thumbsup:
+- [x] A lib directory must be present (by default it's created with the `build` task)
+- [x] The entrypoint of your code in production **must** be in the `lib/bot.js` file. This file **must** contain an export of a `bot` function named `bot`. It tooks as first argument the body of the request (Bot Connector, custom curl,...)
 
-You can change file name, directory structure, but be sure that these two tasks work fine!
+You can change all other file name, directory structure, but be sure that these tree points work fine!
 
 ## More
 
