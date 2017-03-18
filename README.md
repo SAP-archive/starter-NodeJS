@@ -73,9 +73,6 @@ Sending messages | [The Recast.AI SDK](https://github.com/RecastAI/SDK-NodeJS/wi
 Rich messaging | See the different [payload message](https://man.recast.ai)
 Manage the conversation | [The Recast.AI SDK](https://github.com/RecastAI/SDK-NodeJS/wiki) - converse
 
-## How does it works?
-
-
 
 ## How your code will be deployed?
 
