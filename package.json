@@ -13,7 +13,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@git.recast.ai:starter-kits/nodejs.git"
+    "url": "git@github.com:RecastAI/starter-NodeJS.git"
   },
   "dependencies": {
     "babel-polyfill": "^6.22.0",
