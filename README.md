@@ -85,7 +85,7 @@ Connect your github account on Recast:
 - Go to your bot page
 - Click on the **RUN** tab, and on the **Bot Hosting** menu
 - Connect your Github account
-- Select the repository you'vs just created
+- Select the repository you've just created
 - Wait a little, we're starting your instance in Amazon...
 
 Every time you will push on master, we'll deploy your code :clap:
@@ -94,8 +94,8 @@ Every time you will push on master, we'll deploy your code :clap:
 
 Since we deploy your code in AWS Lambda, your package.json **must** contain:
 
-[X] The task `build`. The default one you will find in the starter kit is `"build": "babel src -d lib"` to compile your Javascript in a version that AWS Lambda support. So you can code with your favorite ES6, ES7 features :thumbsup:
-[X] The task `prod`. the default one you will find in the starter kit is `"prod": "node lib/server.js"` to serve your code.
+- [x] The task `build`. The default one you will find in the starter kit is `"build": "babel src -d lib"` to compile your Javascript in a version that AWS Lambda support. So you can code with your favorite ES6, ES7 features :thumbsup:
+- [x] The task `prod`. the default one you will find in the starter kit is `"prod": "node lib/server.js"` to serve your code.
 
 You can change file name, directory structure, but be sure that these two tasks work fine!
 
