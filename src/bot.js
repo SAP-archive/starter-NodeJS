@@ -6,7 +6,7 @@
  */
 
 const recastai = require('recastai')
-const config = require('./config')
+const config = require('../config')
 
 const replyMessage = require('./message')
 
