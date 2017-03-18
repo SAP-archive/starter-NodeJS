@@ -17,6 +17,7 @@ Create an account on the [Recast.AI](https://recast.ai) platform and follow this
 
 ## Usage
 
+
 #### Installation
 
 `git clone git@github.com:RecastAI/starter-NodeJS.git my-bot && cd my-bot`
@@ -26,6 +27,7 @@ using npm
 
 or yarn
 `yarn`
+
 
 #### Create the config file
 
@@ -44,16 +46,31 @@ or yarn
 Complete the Recast.AI `token` and `language`: go to your bot page, click on the settings icon (on the right of your screen), and copy the `request token`.
 Then, set the default language of your bot: `'en'`, `'fr'`...
 
-#### Run
+
+#### Run locally
 
 using npm `npm start`
 
 using yarn `yarn start`
+
+
+In order to **test your bot locally**:
+
+> **Note:** Only if you have connected your bot to channels, using the Bot Connector tool
+
+- download [ngrok](https://ngrok.com/)
+- launch it: `./ngrok http 5000`
+- copy the url ngrok gave and past it in the [Recast.AI](https://recast.ai) interface: Go to your bot page, click on the **RUN** tab and edit your `current bot webhook`
+- Chat with your bot on the channels you've configured ;)
+
+
 
 #### Best practices
 
 
 
 ## How does it works?
+
+
 
 ## How your code will be deployed?
