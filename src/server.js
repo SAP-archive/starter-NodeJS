@@ -25,7 +25,7 @@ app.use('/', (request, response) => {
 
 })
 
-// Run Express server, on wright port
+// Run Express server, on right port
 app.listen(app.get('port'), () => {
   console.log('Our bot is running on port', app.get('port'))
 })
