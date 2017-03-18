@@ -6,28 +6,19 @@
 const recastai = require('recastai')
 const config = require('./config')
 
-/*
- * This function is the core of the bot behaviour
- */
+// This function is the core of the bot behaviour
 const replyMessage = (message) => {
-  /*
-   * Instantiate Recast.AI SDK, just for request service
-   */
+
+  // Instantiate Recast.AI SDK, just for request service
   const request = new recastai.request(config.recast.token, config.recast.language)
 
-  /*
-   * Get text from message received
-   */
+  // Get text from message received
   const text = message.content
 
-  /*
-   * Get senderId to catch unique conversation_token
-   */
+  // Get senderId to catch unique conversation_token
   const senderId = message.senderId
 
-  /*
-   * Call Recast.AI SDK, through /converse route
-   */
+  // Call Recast.AI SDK, through /converse route
   request.converseText(text, { conversationToken: senderId })
   .then(result => {
     /*
@@ -37,19 +28,13 @@ const replyMessage = (message) => {
     * etc...
     */
 
-    /*
-    * Add each replies received from API to replies stack
-    */
+    // Add each replies received from API to replies stack
     result.replies.forEach(replyContent => message.addReply({ type: 'text', content: replyContent }))
 
-    /*
-    * Send all replies
-    */
+    // Send all replies
     message.reply()
     .then(() => {
-      /*
-       * Do some code after sending messages
-       */
+      // Do some code after sending messages
     })
     .catch(err => {
       console.error('Error while sending message to channel', err)

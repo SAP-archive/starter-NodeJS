@@ -10,9 +10,7 @@ const config = require('./config')
 
 const replyMessage = require('./message')
 
-/*
- * Instantiate Recast.AI SDK, just for connect service
- */
+// Instantiate Recast.AI SDK, just for connect service
 const connect = new recastai.connect(config.recast.token)
 
 /*
