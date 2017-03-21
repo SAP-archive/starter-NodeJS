@@ -1,6 +1,5 @@
 node_modules
 npm-debug.log
 config/index.js
-config.js
 lib
 yarn.lock

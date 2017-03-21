@@ -3,8 +3,8 @@
  * This file contains your bot code
  */
 
-const recastai = require('recastai')
-const config = require('../config')
+const recastai = require('mandre')
+const config = require('./config')
 
 // This function is the core of the bot behaviour
 const replyMessage = (message) => {

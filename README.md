@@ -31,7 +31,7 @@ or yarn
 
 #### Create the config file
 
- Create a `config.js` file at the root of your project, copy/paste these lines:
+ Create a `config.js` file in the `src` directory of your project, copy/paste these lines:
 
 ```javascript
  module.exports = {

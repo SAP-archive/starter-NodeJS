@@ -9,8 +9,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const config = require('../config')
-const bot = require('./bot')
+const config = require('./config')
+const bot = require('./bot').bot
 
 // Start Express server
 const app = express()
@@ -21,7 +21,15 @@ app.use(bodyParser.json())
 app.use('/', (request, response) => {
 
   // Call bot main function
-  bot(request.body, response)
+  bot(request.body, response, (error, success) => {
+    if (error) {
+      console.log('Error in your bot:', error)
+      response.sendStatus(400)
+    } else if (success) {
+      console.log(success)
+      response.status(200).json(success)
+    }
+  })
 
 })
 
