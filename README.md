@@ -44,7 +44,7 @@ process.env.LANGUAGE = ''
 Complete the Recast.AI `process.env.REQUEST_TOKEN` and `process.env.LANGUAGE`: go to your bot page, click on the settings icon (on the right side of your screen), and copy the `request_token`.
 Then, set the default language of your bot: `'en'`, `'fr'`... or leave this field empty for auto-detection language
 
-Tips: This config. file will never be pushed onto your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** page. More info in [Set up your hosting configuration](https://github.com/RecastAI/starter-NodeJS#set-up-your-hosting-configuration)
+Tips: This config. file will never be pushed onto your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** page. More info in [About your config. file](https://github.com/RecastAI/starter-NodeJS#about-your-config-file)
 
 
 #### Run locally
