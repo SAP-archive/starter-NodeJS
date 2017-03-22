@@ -8,7 +8,7 @@ const recastai = require('mandre')
 // This function is the core of the bot behaviour
 const replyMessage = (message) => {
   // Instantiate Recast.AI SDK, just for request service
-  const request = new recastai.request(process.env.REQUEST_TOKEN, process.env.RECAST_LANGUAGE)
+  const request = new recastai.request(process.env.REQUEST_TOKEN, process.env.LANGUAGE)
   // Get text from message received
   const text = message.content
 

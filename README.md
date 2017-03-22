@@ -36,15 +36,15 @@ or yarn
 ```javascript
 process.env.PORT = '5000'
 process.env.REQUEST_TOKEN = ''
-process.env.RECAST_LANGUAGE = ''
+process.env.LANGUAGE = ''
 // Write your own configuration here:
 // ...
 ```
 
-Complete the Recast.AI `process.env.REQUEST_TOKEN` and `process.env.RECAST_LANGUAGE`: go to your bot page, click on the settings icon (on the right of your screen), and copy the `request_token`.
-Then, set the default language of your bot: `'en'`, `'fr'`... and leave this empty for auto-detection language
+Complete the Recast.AI `process.env.REQUEST_TOKEN` and `process.env.LANGUAGE`: go to your bot page, click on the settings icon (on the right of your screen), and copy the `request_token`.
+Then, set the default language of your bot: `'en'`, `'fr'`... or leave this empty for auto-detection language
 
-Tips: This config. file will never be pushed on your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** pages. 
+Tips: This config. file will never be pushed on your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** page.
 
 
 #### Run locally
@@ -96,6 +96,18 @@ Since we deploy your code your code in generic containers, there are 3 requireme
 - [x] The entrypoint of your code in production **must** be in the `lib/bot.js` file. This file **must** contain an export of a `bot` function named `bot`. It tooks as first argument the body of the request (Bot Connector, custom curl,...)
 
 You can change all other file name, directory structure, but be sure that these tree points work fine!
+
+#### Set up your hosting configuration
+
+The `src/config.js` file will never be pushed and your repository, to keep your configuration private.
+
+To set up your local env. variables in **Bot Hosting**, you have to create env. variable in **Bot Hosting** section in **RUN** page.
+
+`PORT` env. variable is not need. **Bot Hosting** manages it for you :)
+
+`REQUEST_TOKEN` and `LANGUAGE` env. variable are already set up with your bot configuration. `LANGUAGE` can be customised with one you want (`en`, `fr`, etc...)
+
+You can add any env. variable you want in the **Bot Hosting** section.
 
 ## More
 
