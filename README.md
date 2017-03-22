@@ -101,7 +101,7 @@ You can change all other file names, directory structures, but be sure that thes
 
 The `src/config.js` file will never be pushed to your repository, to keep your configuration private.
 
-To set up your local env. variables in **Bot Hosting**, you have to create env. variable in **Bot Hosting** section in the **RUN** page.
+To set up your local env. variables in **Bot Hosting**, you have to create env. variables in **Bot Hosting** section in the **RUN** page.
 
 `PORT` env. variable is not needed. **Bot Hosting** manages it for you :)
 
