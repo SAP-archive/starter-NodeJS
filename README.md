@@ -8,7 +8,7 @@ A starter kit for developing bots on the [Recast.AI](https://recast.ai) platform
 
 #### Node version
 
-We recommend to use at least `node v4.0.0`
+We recommend to use at least `node v4.3.0`
 
 
 #### Recast.AI account
