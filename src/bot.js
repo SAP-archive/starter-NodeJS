@@ -3,12 +3,12 @@
  *
  * In this file:
  * - received message from a connected channel will be transformed with Recast.AI SDK
- * - received message from test command will be proceed by Recast.AI
+ * - received message from test command will be processed by Recast.AI
  *   You can run this command for testing:
  *   curl -X "POST" "http://localhost:5000" -d '{"text": "YOUR_TEXT"}' -H "Content-Type: application/json; charset=utf-8"
  *
  *
- * The Recast.AI SDK will handle message and call your reply bot function
+ * The Recast.AI SDK will handle the message and call your reply bot function (ie. replyMessage function)
  */
 
 const recastai = require('mandre').default
@@ -31,7 +31,7 @@ export const bot = (body, response, callback) => {
     * Call the Recast.AI SDK function to handle message from Bot Connector
     * This function will:
     * - Return a response with the status code 200
-    * - Create a Message object, easy usable in your code
+    * - Create a Message object, easily usable in your code
     * - Call the 'replyMessage' function, with this Message object in parameter
     *
     * If you want to edit the behaviour of your code bot, depending on user input,
@@ -45,7 +45,7 @@ export const bot = (body, response, callback) => {
     callback(null, { 'result': 'Bot answered :)' })
   } else if (body.text) {
     /*
-    * If your request come from testing route
+    * If your request comes from the testing route
     * ie curl -X "POST" "https://localhost:5000" -d '{"text": "YOUR_TEXT"}' -H "Content-Type: application/json; charset=utf-8"
     * It just sends it to Recast.AI and returns replies
     */

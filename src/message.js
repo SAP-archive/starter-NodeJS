@@ -31,7 +31,7 @@ const replyMessage = (message) => {
       console.log('The conversation action is: ', result.action.slug)
     }
 
-    // Add each replies received from API to replies stack
+    // Add each reply received from API to replies stack
     result.replies.forEach(replyContent => message.addReply({ type: 'text', content: replyContent }))
 
     // Send all replies

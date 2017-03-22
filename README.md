@@ -8,7 +8,7 @@ A starter kit for developing bots on the [Recast.AI](https://recast.ai) platform
 
 #### Node version
 
-We recommand use at least `node v4.0.0`
+We recommend to use at least `node v4.0.0`
 
 
 #### Recast.AI account
@@ -41,10 +41,10 @@ process.env.LANGUAGE = ''
 // ...
 ```
 
-Complete the Recast.AI `process.env.REQUEST_TOKEN` and `process.env.LANGUAGE`: go to your bot page, click on the settings icon (on the right of your screen), and copy the `request_token`.
-Then, set the default language of your bot: `'en'`, `'fr'`... or leave this empty for auto-detection language
+Complete the Recast.AI `process.env.REQUEST_TOKEN` and `process.env.LANGUAGE`: go to your bot page, click on the settings icon (on the right side of your screen), and copy the `request_token`.
+Then, set the default language of your bot: `'en'`, `'fr'`... or leave this field empty for auto-detection language
 
-Tips: This config. file will never be pushed on your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** page. More info in [Set up your hosting configuration](https://github.com/RecastAI/starter-NodeJS#set-up-your-hosting-configuration)
+Tips: This config. file will never be pushed onto your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** page. More info in [Set up your hosting configuration](https://github.com/RecastAI/starter-NodeJS#set-up-your-hosting-configuration)
 
 
 #### Run locally
@@ -57,12 +57,12 @@ using yarn `yarn start`
 
 - download [ngrok](https://ngrok.com/)
 - launch it: `./ngrok http 5000`
-- copy the url ngrok gave and past it in the [Recast.AI](https://recast.ai) interface: Go to your bot page, click on the **RUN** tab and edit your `current bot webhook`
+- copy the url ngrok gave and paste it in the [Recast.AI](https://recast.ai) interface: Go to your bot page, click on the **RUN** tab and edit your `current bot webhook`
 - Chat with your bot on the channels you've configured ;)
 
 #### Alternative
 
-If you're not using the Bot Connector to connect your bot to channels, you will only need the `server.js` file and the `message.js` file and make changes depending the way you want to receive the message.
+If you're not using the Bot Connector to connect your bot to the channels, you will only need the `server.js` file and the `message.js` file and make changes depending on the way you want to receive the message.
 
 ## Documentation
 
@@ -76,7 +76,7 @@ Manage the conversation | [The Recast.AI SDK](https://github.com/RecastAI/SDK-No
 
 ## How your code will be deployed?
 
-To host your bot and deploy your code, create a repository on Github, and push this on code on it.
+To host your bot and deploy your code, create a repository on Github, and push this code on it.
 Connect your github account on Recast:
 
 - Go to your bot page
@@ -85,7 +85,7 @@ Connect your github account on Recast:
 - Select the repository you've just created
 - Wait a little, we're starting your instance...
 
-Every time you will push on master, we'll deploy your code :clap:
+Every time you will push onto the master branch, we'll deploy your code :clap:
 
 #### Requirements
 
@@ -93,19 +93,19 @@ Since we deploy your code your code in generic containers, there are 3 requireme
 
 - [x] Your package.json **must** contain the `build` task. It must be present even if empty or just copying files. The default one you will find in the starter kit is `"build": "babel src -d lib"` to compile your Javascript. So you can code with your favorite ES6, ES7 features :thumbsup:
 - [x] A lib directory must be present (by default it's created with the `build` task)
-- [x] The entrypoint of your code in production **must** be in the `lib/bot.js` file. This file **must** contain an export of a `bot` function named `bot`. It tooks as first argument the body of the request (Bot Connector, custom curl,...)
+- [x] The entrypoint of your code in production **must** be in the `lib/bot.js` file. This file **must** contain an export of a `bot` function named `bot`. It takes as the first argument the body of the request (Bot Connector, custom curl,...)
 
-You can change all other file name, directory structure, but be sure that these tree points work fine!
+You can change all other file names, directory structures, but be sure that these three points work fine!
 
 #### Set up your hosting configuration
 
 The `src/config.js` file will never be pushed to your repository, to keep your configuration private.
 
-To set up your local env. variables in **Bot Hosting**, you have to create env. variable in **Bot Hosting** section in **RUN** page.
+To set up your local env. variables in **Bot Hosting**, you have to create env. variable in **Bot Hosting** section in the **RUN** page.
 
 `PORT` env. variable is not needed. **Bot Hosting** manages it for you :)
 
-`REQUEST_TOKEN` and `LANGUAGE` env. variable are already set up with your bot configuration. `LANGUAGE` can be customised with one you want (`en`, `fr`, ...)
+`REQUEST_TOKEN` and `LANGUAGE` env. variables are already set up with your bot configuration. `LANGUAGE` can be customised with the one you want (`en`, `fr`, ...)
 
 You can add any env. variable you want in the **Bot Hosting** section and then use it in your code with this syntax: `process.env.MY_ENV_VAR_NAME`
 

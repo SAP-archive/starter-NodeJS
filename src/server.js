@@ -3,7 +3,7 @@
  * This file is the core of your bot
  *
  * It creates a little server using express
- * So, your bot can be triggered thought "/" route
+ * So, your bot can be triggered throught "/" route
  *
  * This file was made for locally testing your bot
  * You can test it by running this command
@@ -40,7 +40,7 @@ app.use('/', (request, response) => {
 })
 
 if (!process.env.REQUEST_TOKEN.length) {
-  console.log('ERROR: process.env.REQUEST_TOKEN variable in src/config.js file is empty ! You must fill this field with the request_token of your bot before launching locally your bot')
+  console.log('ERROR: process.env.REQUEST_TOKEN variable in src/config.js file is empty ! You must fill this field with the request_token of your bot before launching your bot locally')
 
   process.exit(0)
 } else {
