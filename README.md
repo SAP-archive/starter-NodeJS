@@ -34,17 +34,17 @@ or yarn
  Create a `config.js` file in the `src` directory of your project, copy/paste these lines:
 
 ```javascript
- module.exports = {
-  port: process.env.PORT || '5000',
-  recast: {
-    token: process.env.RECAST_TOKEN || '',
-    language: process.env.RECAST_LANGUAGE || '',
-  },
-}
+process.env.PORT = '5000'
+process.env.REQUEST_TOKEN = ''
+process.env.RECAST_LANGUAGE = ''
+// Write your own configuration here:
+// ...
 ```
 
-Complete the Recast.AI `token` and `language`: go to your bot page, click on the settings icon (on the right of your screen), and copy the `request token`.
-Then, set the default language of your bot: `'en'`, `'fr'`...
+Complete the Recast.AI `process.env.REQUEST_TOKEN` and `process.env.RECAST_LANGUAGE`: go to your bot page, click on the settings icon (on the right of your screen), and copy the `request_token`.
+Then, set the default language of your bot: `'en'`, `'fr'`... and leave this empty for auto-detection language
+
+Tips: This config. file will never be pushed on your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** pages. 
 
 
 #### Run locally

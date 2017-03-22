@@ -1,22 +1,29 @@
 /*
  * bot.js
- * In this file, received message will be transformed with Recast.AI SDK
+ *
+ * In this file:
+ * - received message from a connected channel will be transformed with Recast.AI SDK
+ * - received message from test command will be proceed by Recast.AI
+ *   You can run this command for testing:
+ *   curl -X "POST" "http://localhost:5000" -d '{"text": "YOUR_TEXT"}' -H "Content-Type: application/json; charset=utf-8"
+ *
  *
  * The Recast.AI SDK will handle message and call your reply bot function
  */
 
 const recastai = require('mandre').default
-const config = require('./config')
 
 const replyMessage = require('./message')
 
 // Instantiate Recast.AI SDK
-const client = new recastai(config.recast.token)
+const client = new recastai(process.env.REQUEST_TOKEN)
 
 /*
  * Main bot function
- * It takes body of the request
- * And optionally, the response object of your server
+ * Parameters are:
+ * - body: Request body
+ * - response: Response of your server (can be a blank object if not needed: {})
+ * - callback: Callback is a function called by Recast.AI hosting system when your code will be hosted
  */
 export const bot = (body, response, callback) => {
   if (body.message) {
@@ -26,20 +33,41 @@ export const bot = (body, response, callback) => {
     * - Return a response with the status code 200
     * - Create a Message object, easy usable in your code
     * - Call the 'replyMessage' function, with this Message object in parameter
+    *
+    * If you want to edit the behaviour of your code bot, depending on user input,
+    * go to /src/message.js file and write your own code under "YOUR OWN CODE" comment.
     */
     client.connect.handleMessage({ body }, response, replyMessage)
+
+    /*
+     * This function is called by Recast.AI hosting system when your code will be hosted
+     */
+    callback(null, { 'result': 'Bot answered :)' })
   } else if (body.text) {
     /*
     * If your request come from testing route
-    * ie curl -X POST https://run.recast.ai/{userslug}-{botslug}
+    * ie curl -X "POST" "https://localhost:5000" -d '{"text": "YOUR_TEXT"}' -H "Content-Type: application/json; charset=utf-8"
     * It just sends it to Recast.AI and returns replies
     */
     client.request.converseText(body.text, { conversationToken: process.env.CONVERSATION_TOKEN || null })
       .then((res) => {
-        callback(null, {
-          reply: res.reply(),
-          conversationToken: res.conversationToken,
-        })
+        if (res.reply()) {
+          /*
+           * If response received from Recast.AI contains a reply
+           */
+          callback(null, {
+            reply: res.reply(),
+            conversationToken: res.conversationToken,
+          })
+        } else {
+          /*
+           * If response received from Recast.AI does not contain any reply
+           */
+          callback(null, {
+            reply: 'No reply :(',
+            conversationToken: res.conversationToken,
+          })
+        }
       })
       .catch((err) => {
         callback(err)

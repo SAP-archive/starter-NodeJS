@@ -4,16 +4,14 @@
  */
 
 const recastai = require('mandre')
-const config = require('./config')
 
 // This function is the core of the bot behaviour
 const replyMessage = (message) => {
-
   // Instantiate Recast.AI SDK, just for request service
-  const request = new recastai.request(config.recast.token, config.recast.language)
-
+  const request = new recastai.request(process.env.REQUEST_TOKEN, process.env.RECAST_LANGUAGE)
   // Get text from message received
   const text = message.content
+
   console.log('I receive: ', text)
 
   // Get senderId to catch unique conversation_token
@@ -23,6 +21,7 @@ const replyMessage = (message) => {
   request.converseText(text, { conversationToken: senderId })
   .then(result => {
     /*
+    * YOUR OWN CODE
     * Here, you can add your own process.
     * Ex: You can call any external API
     * Or: Update your mongo DB
