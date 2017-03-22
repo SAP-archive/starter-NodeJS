@@ -42,7 +42,7 @@ export const bot = (body, response, callback) => {
     /*
      * This function is called by Recast.AI hosting system when your code will be hosted
      */
-    callback(null, { 'result': 'Bot answered :)' })
+    callback(null, { result: 'Bot answered :)' })
   } else if (body.text) {
     /*
     * If your request comes from the testing route

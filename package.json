@@ -41,7 +41,8 @@
   "eslintConfig": {
     "extends": "zavatta",
     "rules": {
-      "no-console": 0
+      "no-console": 0,
+      "callback-return": 0
     }
   }
 }
