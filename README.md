@@ -97,7 +97,7 @@ Since we deploy your code your code in generic containers, there are 3 requireme
 
 You can change all other file names, directory structures, but be sure that these three points work fine!
 
-#### Set up your hosting configuration
+#### About your config. file
 
 The `src/config.js` file will never be pushed to your repository, to keep your configuration private.
 
