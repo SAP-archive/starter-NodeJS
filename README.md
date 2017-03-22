@@ -44,7 +44,7 @@ process.env.LANGUAGE = ''
 Complete the Recast.AI `process.env.REQUEST_TOKEN` and `process.env.LANGUAGE`: go to your bot page, click on the settings icon (on the right of your screen), and copy the `request_token`.
 Then, set the default language of your bot: `'en'`, `'fr'`... or leave this empty for auto-detection language
 
-Tips: This config. file will never be pushed on your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** page.
+Tips: This config. file will never be pushed on your repository. If you would like to deploy your code with **Bot Hosting**, you just have to create env. variables in **Bot Hosting** section in **RUN** page. More info in [Set up your hosting configuration](https://github.com/RecastAI/starter-NodeJS#set-up-your-hosting-configuration)
 
 
 #### Run locally
@@ -99,15 +99,15 @@ You can change all other file name, directory structure, but be sure that these 
 
 #### Set up your hosting configuration
 
-The `src/config.js` file will never be pushed and your repository, to keep your configuration private.
+The `src/config.js` file will never be pushed to your repository, to keep your configuration private.
 
 To set up your local env. variables in **Bot Hosting**, you have to create env. variable in **Bot Hosting** section in **RUN** page.
 
-`PORT` env. variable is not need. **Bot Hosting** manages it for you :)
+`PORT` env. variable is not needed. **Bot Hosting** manages it for you :)
 
-`REQUEST_TOKEN` and `LANGUAGE` env. variable are already set up with your bot configuration. `LANGUAGE` can be customised with one you want (`en`, `fr`, etc...)
+`REQUEST_TOKEN` and `LANGUAGE` env. variable are already set up with your bot configuration. `LANGUAGE` can be customised with one you want (`en`, `fr`, ...)
 
-You can add any env. variable you want in the **Bot Hosting** section.
+You can add any env. variable you want in the **Bot Hosting** section and then use it in your code with this syntax: `process.env.MY_ENV_VAR_NAME`
 
 ## More
 
