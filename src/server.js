@@ -30,10 +30,10 @@ app.use('/', (request, response) => {
   bot(request.body, response, (error, success) => {
     if (error) {
       console.log('Error in your bot:', error)
-      response.sendStatus(400)
+      if (!response.headerSent) { response.sendStatus(400) }
     } else if (success) {
       console.log(success)
-      response.status(200).json(success)
+      if (!response.headerSent) { response.status(200).json(success) }
     }
   })
 
