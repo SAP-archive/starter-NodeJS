@@ -60,9 +60,9 @@ using yarn `yarn start`
 - copy the url ngrok gave and paste it in the [Recast.AI](https://recast.ai) interface: Go to your bot page, click on the **RUN** tab and edit your `current bot webhook`
 - Chat with your bot on the channels you've configured ;)
 
-#### Alternative
+#### Alternative, if you are not using **Bot Connector**
 
-If you're not using the Bot Connector to connect your bot to the channels, you will only need the `server.js` file and the `message.js` file and make changes depending on the way you want to receive the message.
+If you're not using the Bot Connector to connect your bot to the channels, you will only need to change the `bot.js` file and the `message.js` file and make changes depending on the way you want to receive the message.
 
 ## Documentation
 
