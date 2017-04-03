@@ -20,7 +20,7 @@ Create an account on the [Recast.AI](https://recast.ai) platform and follow this
 
 #### Installation
 
-`git clone git@github.com:RecastAI/starter-NodeJS.git my-bot && cd my-bot`
+`git clone https://github.com/RecastAI/starter-NodeJS.git my-bot && cd my-bot`
 
 using npm
 `npm install`
