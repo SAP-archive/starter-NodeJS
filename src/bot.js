@@ -11,7 +11,7 @@
  * The Recast.AI SDK will handle the message and call your reply bot function (ie. replyMessage function)
  */
 
-const recastai = require('mandre').default
+const recastai = require('recastai').default
 
 const replyMessage = require('./message')
 
