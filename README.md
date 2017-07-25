@@ -85,11 +85,11 @@ Connect your github account on Recast:
 - Select the repository you've just created
 - Wait a little, we're starting your instance...
 
-Every time you will push onto the master branch, we'll deploy your code :clap:
+Every time you will push onto the master branch, we'll deploy your code 👏
 
 #### Requirements
 
-Since we deploy your code your code in generic containers, there are 3 requirements:
+Since we deploy your code in generic containers, there are 3 requirements:
 
 - [x] Your package.json **must** contain the `build` task. It must be present even if empty or just copying files. The default one you will find in the starter kit is `"build": "babel src -d lib"` to compile your Javascript. So you can code with your favorite ES6, ES7 features :thumbsup:
 - [x] A lib directory must be present (by default it's created with the `build` task)
