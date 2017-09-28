@@ -24,7 +24,7 @@ app.set('port', process.env.PORT || 5000)
 app.use(bodyParser.json())
 
 // Handle / route
-app.use('/', (request, response) => {
+app.post('/', (request, response) => {
 
   // Call bot main function
   bot(request.body, response, (error, success) => {
