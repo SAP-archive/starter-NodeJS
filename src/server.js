@@ -28,7 +28,7 @@ app.use('/', (request, response) => {
   bot.reply(request, response)
     .then(success => {
       console.log(success)
-      if (!response.headersSent) { response.status(200).json(success) }
+      if (!response.headersSent) { response.status(200) }
     }).catch(error => {
       console.log('Error in your bot:', error)
       if (!response.headersSent) { response.sendStatus(400) }
