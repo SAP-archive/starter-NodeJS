@@ -22,14 +22,11 @@ const client = new recastai(process.env.REQUEST_TOKEN)
  * - message: Message received from BotConnector
  */
 const replyMessage = message => {
-  // Instantiate Recast.AI SDK, just for request service
-  const request = new recastai.request(process.env.REQUEST_TOKEN, process.env.LANGUAGE)
-
   // Get text from message received
   const text = message.content
   console.log('I receive: ', text)
 
-  return request.analyseText(text)
+  return client.request.analyseText(text)
     .then(nlp => {
       let reply = 'I\'m sorry but I don\'t understand what you are talking about.'
       const intent = nlp.intent()
