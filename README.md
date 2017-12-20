@@ -1,3 +1,14 @@
+<p align="center">
+  <img src="https://cdn.recast.ai/blog/sdk.png" />
+</p>
+
+| [Usage](#usage) | [Documentation](#documentation) | [Getting Started on Recast.AI]( #getting-started-with-recastai) | [License](#license) |
+|---|---|---|---|
+
+<div>
+<a href="https://slack.recast.ai/">💬 Questions / Comments? Join the discussion on our community Slack channel!</a>
+</div>
+
 # Recast.AI starter kit NodeJS
 
 A starter kit for developing bots on the [Recast.AI](https://recast.ai) platform.
@@ -71,6 +82,19 @@ The `src/config.js` file will never be pushed to your repository, to keep your c
 
 You can view the whole API reference at [man.recast.ai](https://man.recast.ai).
 You can follow us on Twitter at [@recastai](https://twitter.com/recastai) for updates and releases.
+
+## Getting started with Recast.AI
+
+We build products to help enterprises and developers have a better understanding of user inputs.
+
+-   **NLP API**: a unique API for text processing, and augmented training.
+-   **Bot Building Tools**: all you need to create smart bots powered by Recast.AI's NLP API. Design even the most complex conversation flow, use all rich messaging formats and connect to external APIs and services.
+-   **Bot Connector API**: standardizes the messaging format across all channels, letting you connect your bots to any channel in minutes.
+
+Learn more about:
+
+| [API Documentation](https://recast.ai/docs/api-reference/) | [Discover the platform](https://recast.ai/docs/create-your-bot) | [First bot tutorial](https://recast.ai/blog/build-your-first-bot-with-recast-ai/) | [Advanced NodeJS tutorial](https://recast.ai/blog/nodejs-chatbot-movie-bot/) | [Advanced Python tutorial](https://recast.ai/blog/python-cryptobot/) |
+|---|---|---|---|---|
 
 ## License
 
